@@ -23,6 +23,10 @@
 </script>
 <script>
   function init() {
+    var ros = new ROSLIB.Ros({
+      url : 'ws://localhost:9090'
+    });
+
     var viewer = new ROS3D.Viewer({
       divID : 'map',
       width : window.innerWidth,
@@ -31,9 +35,23 @@
     });
 
     new ROS3D.OccupancyGridClient({
+      continuous : true,
       ros : new ROSLIB.Ros({
         url : 'ws://localhost:9090'
       }),
+      rootObject : viewer.scene
+    });
+
+    var markerClient = new ROS3D.MarkerClient({
+      ros : ros,
+      tfClient : new ROSLIB.TFClient({
+        ros : ros,
+        angularThres : 0.01,
+        transThres : 0.01,
+        rate : 10.0,
+        fixedFrame : '/map'
+      }),
+      topic : '/position_marker',
       rootObject : viewer.scene
     });
   }
