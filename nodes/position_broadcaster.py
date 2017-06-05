@@ -37,8 +37,8 @@ class PalletBroadcaster():
     def setDeadReckoningGoal(self):
         rospy.loginfo("Setting location")
         try:
-            self.tf_listener.waitForTransform('/map','/laser_link', rospy.Time(0), rospy.Duration(20.0))
-            (trans, rot) = self.tf_listener.lookupTransform('/map', '/laser_link', rospy.Time(0))
+            self.tf_listener.waitForTransform('/map','/base_footprint', rospy.Time(0), rospy.Duration(20.0))
+            (trans, rot) = self.tf_listener.lookupTransform('/map', '/base_footprint', rospy.Time(0))
             self.pos_x = trans[0]
             self.pos_y = trans[1]
 
