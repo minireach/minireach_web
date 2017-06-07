@@ -28,6 +28,18 @@
       url : 'ws://' + server_address + ':9090'
     });
 
+    ros.on("connection", function () {
+      console.log("conneted!")
+    })
+
+    ros.on("error", function (error) {
+      console.log("Error!", error)
+    })
+
+    ros.on('close', function() {
+      console.log('Connection to websocket server closed.');
+    });
+
     var viewer = new ROS3D.Viewer({
       divID : 'map',
       width : window.innerWidth,
