@@ -1,0 +1,35 @@
+Mini RAM SVR
+Area	0.806 m^2
+Density	7850.00 kg / m^3
+Mass	13.978 kg
+Volume	0.002 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.129 m
+Width 	 0.383 m
+Height 	 0.99 m
+World X,Y,Z	-0.2 m, 1.63107e-09 m, -0.038 m
+Center of Mass	-0.18314 m, 6.7364e-09 m, 0.458266 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 1.79
+	Ixy = 3.844E-09
+	Ixz = 0.064
+	Iyx = 3.844E-09
+	Iyy = 1.594
+	Iyz = -3.101E-08
+	Izx = 0.064
+	Izy = -3.101E-08
+	Izz = 0.23
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 4.726
+	Ixy = 2.109E-08
+	Ixz = 1.237
+	Iyx = 2.109E-08
+	Iyy = 4.999
+	Iyz = -7.416E-08
+	Izx = 1.237
+	Izy = -7.416E-08
+	Izz = 0.699

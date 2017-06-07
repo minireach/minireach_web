@@ -1,0 +1,35 @@
+Mini Cab SVR
+Area	1.301 m^2
+Density	7850.00 kg / m^3
+Mass	14.768 kg
+Volume	0.002 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.398 m
+Width 	 0.43 m
+Height 	 0.623 m
+World X,Y,Z	0 m, 0 m, 0 m
+Center of Mass	-0.482207 m, -0.00358373 m, 0.345968 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 1.044
+	Ixy = -0.004
+	Ixz = 0.031
+	Iyx = -0.004
+	Iyy = 0.809
+	Iyz = 0.01
+	Izx = 0.031
+	Izy = 0.01
+	Izz = 0.708
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 2.811
+	Ixy = -0.03
+	Ixz = 2.495
+	Iyx = -0.03
+	Iyy = 6.01
+	Iyz = 0.028
+	Izx = 2.495
+	Izy = 0.028
+	Izz = 4.142

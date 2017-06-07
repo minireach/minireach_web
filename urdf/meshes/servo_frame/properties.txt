@@ -1,0 +1,35 @@
+Frame F2
+Area	0.008 m^2
+Density	7850.00 kg / m^3
+Mass	0.057 kg
+Volume	7.292E-06 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.025 m
+Width 	 0.049 m
+Height 	 0.037 m
+World X,Y,Z	-0.0635912 m, -5e-05 m, 0.818771 m
+Center of Mass	-0.0635935 m, -5e-05 m, 0.833851 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 2.540E-05
+	Ixy = 0.00
+	Ixz = 1.232E-09
+	Iyx = 0.00
+	Iyy = 9.623E-06
+	Iyz = 0.00
+	Izx = 1.232E-09
+	Izy = 0.00
+	Izz = 2.258E-05
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 0.04
+	Ixy = -1.820E-07
+	Ixz = 0.003
+	Iyx = -1.820E-07
+	Iyy = 0.04
+	Iyz = 2.386E-06
+	Izx = 0.003
+	Izy = 2.386E-06
+	Izz = 2.541E-04

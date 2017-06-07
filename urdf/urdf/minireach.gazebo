@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<robot>
+
+  <gazebo>
+    <plugin name="gazebo_mimic_joint" filename="libminireach_gazebo_mimic_joint_plugin.so">
+      <joint>fork_joint</joint>
+      <mimicJoint>gejd_joint</mimicJoint>
+      <maxEffort>1000</maxEffort>
+      <multiplier>0.5</multiplier>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <!--
+      <robotNamespace></robotNamespace>
+      -->
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <!-- IMU plugin -->
+  <!--
+  <gazebo>
+    <plugin name="robot_imu_sim" filename="libhector_gazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <bodyName>imu_link</bodyName>
+      <frameID>imu_link</frameID>
+      <topicName>imu</topicName>
+      <xyzOffset>0.0 0.0 0.0</xyzOffset>
+      <rpyOffset>0.0 0.0 0.0</rpyOffset>
+      <gaussianNoise>0</gaussianNoise>
+      <accelDrift>0.5 0.5 0.5</accelDrift>
+      <accelGaussianNoise>0.35 0.35 0.3</accelGaussianNoise>
+      <rateDrift>0.0 0.0 0.0</rateDrift>
+      <rateGaussianNoise>0.00 0.00 0.00</rateGaussianNoise>
+      <headingDrift>0.0</headingDrift>
+      <headingGaussianNoise>0.00</headingGaussianNoise>
+    </plugin>
+  </gazebo>
+  -->
+
+  <!--
+  <gazebo reference="imu_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  -->
+
+  <gazebo reference="base_footprint">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+
+  <gazebo reference="battery_link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+
+  <gazebo reference="reach_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="fork_laser_holder">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="drive_wheel_laser_holder">
+    <material>Gazebo/SkyBlue</material>
+  </gazebo>
+
+</robot>

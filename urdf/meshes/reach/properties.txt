@@ -1,0 +1,35 @@
+Reach Mini SVR
+Area	1.332 m^2
+Density	7850.00 kg / m^3
+Mass	36.219 kg
+Volume	0.005 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.499 m
+Width 	 0.382 m
+Height 	 0.369 m
+World X,Y,Z	-0.051 m, 0 m, -0.061 m
+Center of Mass	-0.296881 m, 0.000209854 m, 0.0816012 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 1.02
+	Ixy = -3.476E-05
+	Ixz = -0.277
+	Iyx = -3.476E-05
+	Iyy = 0.993
+	Iyz = 5.346E-05
+	Izx = -0.277
+	Izy = 5.346E-05
+	Izz = 1.123
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 1.261
+	Ixy = 0.002
+	Ixz = 0.601
+	Iyx = 0.002
+	Iyy = 4.426
+	Iyz = -5.668E-04
+	Izx = 0.601
+	Izy = -5.668E-04
+	Izz = 4.315

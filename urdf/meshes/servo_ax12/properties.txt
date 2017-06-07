@@ -1,0 +1,35 @@
+AX12
+Area	0.013 m^2
+Density	7850.00 kg / m^3
+Mass	0.337 kg
+Volume	4.299E-05 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.032 m
+Width 	 0.041 m
+Height 	 0.05 m
+World X,Y,Z	-0.0640912 m, 0.00145 m, 0.802521 m
+Center of Mass	-0.0635919 m, 0.00107814 m, 0.80627 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 9.878E-05
+	Ixy = -2.850E-09
+	Ixz = -6.767E-10
+	Iyx = -2.850E-09
+	Iyy = 8.224E-05
+	Iyz = -1.581E-06
+	Izx = -6.767E-10
+	Izy = -1.581E-06
+	Izz = 5.450E-05
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 0.219
+	Ixy = 2.313E-05
+	Ixz = 0.017
+	Iyx = 2.313E-05
+	Iyy = 0.221
+	Iyz = -2.949E-04
+	Izx = 0.017
+	Izy = -2.949E-04
+	Izz = 0.001

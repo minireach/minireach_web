@@ -1,0 +1,35 @@
+Zed Camera
+Area	0.023 m^2
+Density	7850.00 kg / m^3
+Mass	1.278 kg -- really 0.159 kg
+Volume	1.627E-04 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.033 m
+Width 	 0.175 m
+Height 	 0.03 m
+World X,Y,Z	-0.0757912 m, 0 m, 0.859771 m
+Center of Mass	-0.0596694 m, -4.95971e-15 m, 0.859789 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 0.003
+	Ixy = 0.00
+	Ixz = -8.394E-09
+	Iyx = 0.00
+	Iyy = 2.038E-04
+	Iyz = 0.00
+	Izx = -8.394E-09
+	Izy = 0.00
+	Izz = 0.003
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 0.948
+	Ixy = 0.00
+	Ixz = 0.066
+	Iyx = 0.00
+	Iyy = 0.949
+	Iyz = 0.00
+	Izx = 0.066
+	Izy = 0.00
+	Izz = 0.008

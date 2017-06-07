@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="drive_wheel_assembly" params="parent">
+
+
+  <!-- Drive Wheel Steer -->
+  <link name="wheel_steer_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.8" />
+		 <inertia ixx="0.03" ixy="0.0" ixz="0.0"
+		 iyy="0.03" iyz="0.0" 
+		 izz="0.03" />
+    </inertial>
+  </link>
+
+  <joint name="wheel_steer_joint" type="revolute">
+    <child link="wheel_steer_link" />
+    <parent link="base_link"/>
+    <limit effort="10000.0" lower="${-175 * deg_to_rad}" upper="${175 * deg_to_rad}" velocity="1.5"/>
+    <origin xyz="${drive_wheel_pos_x} ${drive_wheel_pos_y} ${drive_wheel_pos_z}" rpy="${180 * deg_to_rad} 0 0"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="2.0"/>
+  </joint>
+
+  <!-- Drive Wheel Rotation -->
+  <link name="wheel_drive_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.8" />
+      <inertia ixx="0.03" ixy="0" ixz="0"
+		 iyy="0.03" iyz="0" 
+		 izz="0.03" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 ${180 * deg_to_rad}"/>
+      <geometry>
+        <mesh filename="package://minireach_description/meshes/drive_wheel/drive_wheel_medium.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="${90 * deg_to_rad} 0 0"/>
+      <geometry>
+	      <cylinder radius="${drive_wheel_radius}" length="${drive_wheel_width}" />
+      </geometry>
+    </collision>
+  </link>
+            
+  <joint name="wheel_drive_joint" type="continuous">
+    <parent link="wheel_steer_link"/>
+    <child link="wheel_drive_link"/>
+    <origin xyz="0 0 0" rpy="0 0 ${180 * deg_to_rad}"/>
+    <axis xyz="0 1 0"/>
+    <!--
+    <dynamics damping="0.1"/>
+    -->
+  </joint>
+
+  <!-- Transmissions -->
+   <transmission name="wheel_steer_tran">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="wheel_steer_joint">
+       <hardwareInterface>PositionJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="servo1">
+       <hardwareInterface>PositionJointInterface</hardwareInterface>
+       <mechanicalReduction>1</mechanicalReduction>
+     </actuator>
+   </transmission>
+
+   <transmission name="wheel_drive_tran">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="wheel_drive_joint">
+       <hardwareInterface>VelocityJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="motor1">
+       <hardwareInterface>VelocityJointInterface</hardwareInterface>
+       <mechanicalReduction>1</mechanicalReduction>
+     </actuator>
+   </transmission>
+
+
+  <!-- Gazebo extentions -->
+  <gazebo reference="wheel_steer_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="wheel_drive_link">
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.003</minDepth>
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  </xacro:macro>
+</robot>
+

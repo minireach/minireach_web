@@ -1,0 +1,35 @@
+ø125 x 25 Hjul
+Area	0.09 m^2
+Density	7850.00 kg / m^3
+Mass	1.766 kg
+Volume	2.250E-04 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.125 m
+Width 	 0.032 m
+Height 	 0.125 m
+World X,Y,Z	0 m, 0 m, 0 m
+Center of Mass	0.0730031 m, 0.183863 m, 0.128002 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 0.002
+	Ixy = 1.352E-07
+	Ixz = 5.832E-08
+	Iyx = 1.352E-07
+	Iyy = 0.004
+	Iyz = -5.457E-08
+	Izx = 5.832E-08
+	Izy = -5.457E-08
+	Izz = 0.002
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 0.091
+	Ixy = -0.024
+	Ixz = -0.017
+	Iyx = -0.024
+	Iyy = 0.042
+	Iyz = -0.042
+	Izx = -0.017
+	Izy = -0.042
+	Izz = 0.071

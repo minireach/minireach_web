@@ -1,0 +1,35 @@
+7595374
+Area	1.453 m^2
+Density	7850.00 kg / m^3
+Mass	0.037 kg
+Volume	4.668E-06 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.128 m
+Width 	 0.229 m
+Height 	 0.289 m
+World X,Y,Z	-0.214338 m, -0.00157676 m, 0.188 m
+Center of Mass	-0.278333 m, -0.00189684 m, 0.267299 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 7.401E-04
+	Ixy = -2.886E-07
+	Ixz = 4.811E-06
+	Iyx = -2.886E-07
+	Iyy = 4.641E-04
+	Iyz = 7.844E-07
+	Izx = 4.811E-06
+	Izy = 7.844E-07
+	Izz = 3.146E-04
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 0.003
+	Ixy = -1.963E-05
+	Ixz = 0.003
+	Iyx = -1.963E-05
+	Iyy = 0.006
+	Iyz = 1.936E-05
+	Izx = 0.003
+	Izy = 1.936E-05
+	Izz = 0.003

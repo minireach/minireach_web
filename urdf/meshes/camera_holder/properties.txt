@@ -1,0 +1,35 @@
+Camera Bracket SVR
+Area	0.175 m^2
+Density	7850.00 kg / m^3
+Mass	1.26 kg
+Volume	1.606E-04 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.057 m
+Width 	 0.21 m
+Height 	 0.695 m
+World X,Y,Z	-0.056 m, 0 m, -0.061 m
+Center of Mass	-0.0900885 m, 2.94922e-10 m, 0.414944 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 0.067
+	Ixy = 0.00
+	Ixz = -0.002
+	Iyx = 0.00
+	Iyy = 0.064
+	Iyz = 0.00
+	Izx = -0.002
+	Izy = 0.00
+	Izz = 0.003
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 0.284
+	Ixy = 0.00
+	Ixz = 0.045
+	Iyx = 0.00
+	Iyy = 0.292
+	Iyz = -1.992E-10
+	Izx = 0.045
+	Izy = -1.992E-10
+	Izz = 0.013

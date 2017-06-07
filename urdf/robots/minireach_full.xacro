@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<robot  xmlns:xacro="http://www.ros.org/wiki/xacro"
+	name="minireach" >
+
+  <!-- Set up definitions of parts of robot body -->
+  <xacro:include filename="$(find minireach_description)/urdf/minireach.xacro" />
+
+  <!-- Use macros to define the actual robot -->
+  <xacro:base name="base"/>
+
+</robot>

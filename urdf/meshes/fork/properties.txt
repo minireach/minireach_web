@@ -1,0 +1,35 @@
+fork_and_carrage v1
+Area	0.491 m^2
+Density	7850.00 kg / m^3
+Mass	8.545 kg
+Volume	0.001 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.476 m
+Width 	 0.265 m
+Height 	 0.344 m
+World X,Y,Z	0 m, 0 m, 0 m
+Center of Mass	-0.0275437 m, -7.95208e-05 m, 0.121758 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 0.142
+	Ixy = -4.052E-05
+	Ixz = 0.047
+	Iyx = -4.052E-05
+	Iyy = 0.173
+	Iyz = 1.102E-04
+	Izx = 0.047
+	Izy = 1.102E-04
+	Izz = 0.13
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 0.269
+	Ixy = -5.924E-05
+	Ixz = 0.076
+	Iyx = -5.924E-05
+	Iyy = 0.306
+	Iyz = 1.929E-04
+	Izx = 0.076
+	Izy = 1.929E-04
+	Izz = 0.136

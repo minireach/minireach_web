@@ -1,0 +1,35 @@
+Support Arms SVR
+Area	5.001 m^2
+Density	7850.00 kg / m^3
+Mass	147.755 kg
+Volume	0.019 m^3
+Physical Material	Steel
+
+Bounding Box
+Length 	 0.689 m
+Width 	 0.445 m
+Height 	 0.553 m
+World X,Y,Z	0 m, 0 m, 0 m
+Center of Mass	-0.403642 m, 0.00716519 m, 0.144332 m
+
+Moment of Inertia at Center of Mass   (kg m^2)
+	Ixx = 4.825
+	Ixy = 0.106
+	Ixz = 0.804
+	Iyx = 0.106
+	Iyy = 6.021
+	Iyz = -0.14
+	Izx = 0.804
+	Izy = -0.14
+	Izz = 4.934
+
+Moment of Inertia at Origin   (kg m^2)
+	Ixx = 7.911
+	Ixy = 0.533
+	Ixz = 9.412
+	Iyx = 0.533
+	Iyy = 33.172
+	Iyz = -0.293
+	Izx = 9.412
+	Izy = -0.293
+	Izz = 29.015

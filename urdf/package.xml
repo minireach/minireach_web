@@ -1,0 +1,28 @@
+<package>
+  <name>minireach_description</name>
+  <version>0.0.2</version>
+  <description>Mini Reach - URDF/Xacro models</description>
+
+  <maintainer email="samuel.lindgren@toyota-industries.eu">Samuel Lindgren</maintainer>
+  <license>BSD</license>
+  <url type="website">minireach.com</url>
+  <url type="bugtracker">TODO: add</url>
+  <author email="samuel.lindgren@toyota-industries.eu">Samuel Lindgren</author>
+
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>urdf</build_depend>
+  <build_depend>xacro</build_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>xacro</run_depend>
+
+</package>
