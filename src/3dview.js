@@ -1,20 +1,4 @@
-function init() {
-  var server_address = '192.168.1.70'
-  var ros = new ROSLIB.Ros({
-    url : 'ws://' + server_address + ':9090'
-  });
-
-  ros.on("connection", function () {
-    console.log("conneted!")
-  })
-
-  ros.on("error", function (error) {
-    console.log("Error!", error)
-  })
-
-  ros.on('close', function() {
-    console.log('Connection to websocket server closed.');
-  });
+function initMap() {
 
   var viewer = new ROS3D.Viewer({
     divID : 'map',
@@ -27,9 +11,7 @@ function init() {
 
   new ROS3D.OccupancyGridClient({
     continuous : true,
-    ros : new ROSLIB.Ros({
-      url : 'ws://' + server_address + ':9090'
-    }),
+    ros : ros,
     rootObject : viewer.scene
   });
 
@@ -63,7 +45,7 @@ function init() {
   var urdfClient = new ROS3D.UrdfClient({
     ros : ros,
     tfClient : tfClient2,
-    path : 'http://localhost/urdf/',
+    path : '/urdf/',
     rootObject : viewer.scene,
     loader : ROS3D.COLLADA_LOADER_2
   });
