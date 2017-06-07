@@ -52,7 +52,7 @@ class TruckBroadcaster():
 
     def palletCallback(self, pallets_message):
         for pallet in pallets_message.markers:
-            publishMarker(pallet.pose.pose)
+            self.PublishMarker(pallet.pose.pose)
 
 
 
