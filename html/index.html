@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<script src="http://cdn.robotwebtools.org.s3.amazonaws.com/threejs/current/three.min.js"></script>
-<script src="http://cdn.robotwebtools.org.s3.amazonaws.com/EventEmitter2/current/eventemitter2.min.js"></script>
-<script src="http://cdn.robotwebtools.org.s3.amazonaws.com/roslibjs/current/roslib.min.js"></script>
-<script src="http://cdn.robotwebtools.org.s3.amazonaws.com/ros3djs/current/ros3d.min.js"></script>
+<script src="https://cdn.robotwebtools.org.s3.amazonaws.com/threejs/current/three.min.js"></script>
+<script src="https://cdn.robotwebtools.org.s3.amazonaws.com/EventEmitter2/current/eventemitter2.min.js"></script>
+<script src="https://cdn.robotwebtools.org.s3.amazonaws.com/roslibjs/current/roslib.min.js"></script>
+<script src="https://cdn.robotwebtools.org.s3.amazonaws.com/ros3djs/current/ros3d.min.js"></script>
 <script>
   (function(i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
@@ -25,7 +25,7 @@
   function init() {
     var server_address = '192.168.1.70'
     var ros = new ROSLIB.Ros({
-      url : 'ws://' + server_address + ':9090'
+      url : 'wss://' + server_address + ':9090'
     });
 
     ros.on("connection", function () {
@@ -50,7 +50,7 @@
     new ROS3D.OccupancyGridClient({
       continuous : true,
       ros : new ROSLIB.Ros({
-        url : 'ws://' + server_address + ':9090'
+        url : 'wss://' + server_address + ':9090'
       }),
       rootObject : viewer.scene
     });
