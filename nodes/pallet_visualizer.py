@@ -31,7 +31,7 @@ class TruckBroadcaster():
 
         while not rospy.is_shutdown():
             self.updatePosition()
-            self.publishMarker()
+            #self.publishMarker()
             rate.sleep()
 
     def updatePosition(self):
