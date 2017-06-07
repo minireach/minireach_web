@@ -25,7 +25,7 @@
   function init() {
     var server_address = '192.168.1.70'
     var ros = new ROSLIB.Ros({
-      url : 'ws://' + server_address + ':9090'
+      url : 'wss://' + server_address + ':9090'
     });
 
     var viewer = new ROS3D.Viewer({
@@ -38,7 +38,7 @@
     new ROS3D.OccupancyGridClient({
       continuous : true,
       ros : new ROSLIB.Ros({
-        url : 'ws://' + server_address + ':9090'
+        url : 'wss://' + server_address + ':9090'
       }),
       rootObject : viewer.scene
     });
