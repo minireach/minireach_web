@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+  <script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+  <style>
+    section {
+      padding: 10px 0;
+    }
+  </style>
+
+  <script type="text/javascript" type="text/javascript">
+  // Connecting to ROS
+
+  //var robotHost = "192.168.1.94";
+  //var robotHost = window.location.hostname;
+
+  // VARIABLER
+  var ros;
+  var robotName;
+
+
+  function connect() {
+    var robotHost = $("#robotHost").val();
+    console.log(robotHost);
+
+    ros = new ROSLIB.Ros({
+      url : 'ws://' + robotHost
+    });
+
+    $("#error").hide();
+    $("#interface").hide();
+    $("#spinner").show();
+
+    ros.on('connection', function() {
+      console.log('Connected to websocket server.');
+      $("#spinner").hide();
+      $("#interface").show();
+    });
+
+    ros.on('error', function(error) {
+      console.log('Could not connect to websocket server: ', error);
+      $("#spinner").hide();
+      $("#error").text("Could not connect to websocket server");
+      $("#error").show();
+    });
+
+    ros.on('close', function() {
+      console.log('Connection to websocket server closed.');
+    });
+
+    var nameParam = new ROSLIB.Param({
+      ros : ros,
+      name : '/name'
+    });
+
+    nameParam.get(function (value) {
+      robotName = value;
+      console.log("Robot name: ", value);
+      startHandlePallet();
+    });
+
+  }
+
+  function startHandlePallet() {
+    //Handle pallet instance
+    var handlePalletClient = new ROSLIB.Service({
+      ros : ros,
+      name : '/' + robotName + '/start_rapp',
+      serviceType : 'rocon_app_manager_msgs/StartRapp'
+    });
+
+    var request = new ROSLIB.ServiceRequest({
+      name : 'minireach_rapps/handle_pallets_mapping'
+    });
+
+    handlePalletClient.callService(
+      request,
+
+      function (result) {
+        console.log('Result for service call on ' + handlePalletClient.name);
+      },
+
+      function (error) {
+        console.log(error);
+      }
+    );
+    //rosservice call /espeon/start_rapp "name: 'minireach_rapps/handle_pallets_mapping'
+  }
+
+  $(document).ready(function () {
+
+
+    $("#ok_button_input").click(function () {
+      var pallet_id = $("#pallet_id_input").val();
+      var storage_id = $("#storage_id_input").val();
+      //alert("Pallet ID: " + pallet_id + "\nStorage ID: " + storage_id);
+
+      // Calling a service
+      // -----------------
+
+      var sendMissionClient = new ROSLIB.Service({
+        ros : ros,
+        name : '/' + robotName + '/send_mission',
+        serviceType : 'minireach_executive/StartMission'
+      });
+
+      var request = new ROSLIB.ServiceRequest({
+        pallet_id : pallet_id,
+        storage_id : storage_id
+      });
+
+      sendMissionClient.callService(
+        request,
+
+        function (result) {
+          console.log('Result for service call on ' + sendMissionClient.name);
+        },
+
+        function (error) {
+          console.log(error);
+        }
+      );
+
+
+    });
+
+    $("#connect_button_input").click(function () {
+      connect();
+    });
+
+
+
+  });
+
+  </script>
+
+</head>
+
+<body>
+
+  <section>
+    <select id="robotHost">
+      <option>localhost:9090</option>
+      <option>192.168.1.94:9090</option>
+      <option>192.168.1.70:9090</option>
+    </select>
+    <input type="button" value="Connect" id="connect_button_input" />
+  </section>
+
+  <section>
+    <img id="spinner" style="display: none;" src="http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif">
+    <span id="error" style="color: red; display: none;"></span>
+  </section>
+
+  <div style="display: none;" id="interface">
+    <section>
+      <table>
+        <tr>
+          <td>
+            Pallet ID:
+          </td>
+          <td>
+            <input type="text" id="pallet_id_input"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Storage ID:
+          </td>
+          <td>
+            <input type="text" id="storage_id_input" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <input type="button" value="Send mission" id="ok_button_input" />
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <table>
+        <tr>
+          <td>
+            <input type="button" value="Save map" />
+          </td>
+          <td>
+            <input type="button" value="Save locations" />
+          </td>
+          <td>
+            <input type="button" value="Save truck" />
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td>
+            <input type="button" value="Update rack" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td>
+            <input type="button" value="Update storage" />
+          </td>
+        </tr>
+      </table>
+    </section>
+  </div>
+</body>
+</html>
