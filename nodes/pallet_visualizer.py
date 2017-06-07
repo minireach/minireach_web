@@ -10,6 +10,7 @@ from tf.transformations import quaternion_from_euler, euler_from_quaternion
 from math import pi
 from minireach_world_state.srv import *
 from std_srvs.srv import *
+from minireach_tasks.msg import AlvarMarkers
 
 class TruckBroadcaster():
 
@@ -25,6 +26,9 @@ class TruckBroadcaster():
         self.initMarker()
         self.point = Point(self.pos_x, self.pos_y, self.pos_z)
         rate = rospy.Rate(10.0)
+
+        self.pallet_sub = rospy.Subscriber('/canvas_ar', AlvarMarkers, self.palletCallback)
+
         while not rospy.is_shutdown():
             self.updatePosition()
             self.publishMarker()
@@ -45,6 +49,11 @@ class TruckBroadcaster():
 
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
             rospy.loginfo("tf lookup for base_footprint failed")
+
+    def palletCallback(self, pallets_message):
+        for pallet in pallets_message.markers:
+            publishMarker(pallet.pose.pose)
+
 
 
     def initMarker(self):
@@ -73,14 +82,9 @@ class TruckBroadcaster():
         self.marker.header.stamp = rospy.Time.now()
         self.marker.points = list()
 
-    def publishMarker(self):
-        self.marker.pose.position.x = self.pos_x
-        self.marker.pose.position.y = self.pos_y
-        self.marker.pose.position.z = self.pos_z
-        self.marker.pose.orientation.x = self.rot[0]
-        self.marker.pose.orientation.y = self.rot[1]
-        self.marker.pose.orientation.z = self.rot[2]
-        self.marker.pose.orientation.w = self.rot[3]
+
+    def publishMarker(self, marker_pose):
+        self.marker.pose = marker_pose
         self.marker_pub.publish(self.marker)
 
 
