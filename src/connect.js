@@ -6,7 +6,7 @@ $(document).ready(function () {
 });
 
 function connect() {
-  var robotHost = $("#robotHost").val();
+  robotHost = $("#robotHost").val();
   console.log(robotHost);
 
   ros = new ROSLIB.Ros({
@@ -46,4 +46,30 @@ function connect() {
     startHandlePallet();
   });
 
+}
+
+function startHandlePallet() {
+  //Handle pallet instance
+  var handlePalletClient = new ROSLIB.Service({
+    ros : ros,
+    name : '/' + robotName + '/start_rapp',
+    serviceType : 'rocon_app_manager_msgs/StartRapp'
+  });
+
+  var request = new ROSLIB.ServiceRequest({
+    name : 'minireach_rapps/handle_pallets_mapping'
+  });
+
+  handlePalletClient.callService(
+    request,
+
+    function (result) {
+      console.log('Result for service call on ' + handlePalletClient.name);
+    },
+
+    function (error) {
+      console.log(error);
+    }
+  );
+  //rosservice call /espeon/start_rapp "name: 'minireach_rapps/handle_pallets_mapping'
 }

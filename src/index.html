@@ -25,6 +25,7 @@
     // GLOBALS
     var ros;
     var robotName;
+    var robotHost;
   </script>
 
   <script type="text/javascript" src="3dview.js"></script>
@@ -82,13 +83,13 @@
       <table>
         <tr>
           <td>
-            <input type="button" value="Save map" />
+            <input type="button" value="Save map" id="save_map_button" />
           </td>
           <td>
-            <input type="button" value="Save locations" />
+            <input type="button" value="Save locations" id="save_locations_button"/>
           </td>
           <td>
-            <input type="button" value="Save truck" />
+            <input type="button" value="Save truck" id="save_truck_button"/>
           </td>
         </tr>
       </table>
@@ -96,18 +97,18 @@
       <table>
         <tr>
           <td>
-            <input type="text" />
+            <input type="text" id="update_rack_input" />
           </td>
           <td>
-            <input type="button" value="Update rack" />
+            <input type="button" value="Update rack" id="update_rack_button"/>
           </td>
         </tr>
         <tr>
           <td>
-            <input type="text" />
+            <input type="text" id="create_storage_input" />
           </td>
           <td>
-            <input type="button" value="Update storage" />
+            <input type="button" value="Create storage" id="create_storage_button"/>
           </td>
         </tr>
       </table>
