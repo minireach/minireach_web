@@ -71,4 +71,4 @@ if __name__ == '__main__':
     try:
         TruckBroadcaster()
     except rospy.ROSInterruptException:
-        rospy.loginfo("Pallet Broadcaster finished"py.spin()
+        rospy.loginfo("Pallet Broadcaster finished")
